@@ -4,7 +4,7 @@ import { Form, TextField, Submit } from '@redwoodjs/forms'
 const HomePage = () => {
 const onSubmit = (data) => {
   fetch(
-    `https://api.openweathermap.org/data/2.5/weather?zip=66952,us&appid=b76dcd7e89746c4fd4baa3c11b0b0553`
+    `https://api.openweathermap.org/data/2.5/weather?zip=${data.zip},us&appid=b76dcd7e89746c4fd4baa3c11b0b0553`
   )
     .then((response) => response.json())
     .then((json) => console.info(json))
