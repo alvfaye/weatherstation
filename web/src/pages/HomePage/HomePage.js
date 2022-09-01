@@ -11,19 +11,36 @@ const onSubmit = (data) => {
     .then((json) => setWeather(json))
 }
 
+    const temp = () => Math.round(((weather.main.temp - 273.15) * 9) / 5 + 32)
+
+    const condition = () => weather.weather[0].main
+
+    const icon = () => {
+      return `http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`
+    }
   return (
     <>
-    <Form onSubmit={onSubmit} style={{ fontSize: '2rem' }}>
-      <TextField
-        name="zip"
-        placeholder="Zip code"
-        maxLength="5"
-        validation={{ required: true, pattern: /^\d{5}$/ }}
-      />
-      <Submit>Go</Submit>
-    </Form>
-      {weather && JSON.stringify(weather)}
-      </>
+      <Form onSubmit={onSubmit} style={{ fontSize: '2rem' }}>
+        <TextField
+          name="zip"
+          placeholder="Zip code"
+          maxLength="5"
+          validation={{ required: true, pattern: /^\d{5}$/ }}
+        />
+        <Submit>Go</Submit>
+      </Form>
+      {weather && (
+        <section>
+          <h1>{weather.name}</h1>
+          <h2>
+            <img src={icon()} style={{ maxWidth: '2rem' }} />
+            <span>
+              {temp()}°F and {condition()}
+            </span>
+          </h2>
+        </section>
+      )}{' '}
+    </>
   )
 }
 
