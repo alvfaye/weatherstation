@@ -7440,6 +7440,7 @@ __metadata:
   dependencies:
     "@redwoodjs/api": 2.2.3
     "@redwoodjs/graphql-server": 2.2.3
+    cross-undici-fetch: ^0.4.14
   languageName: unknown
   linkType: soft
 
@@ -10063,7 +10064,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cross-undici-fetch@npm:0.4.14, cross-undici-fetch@npm:^0.4.11":
+"cross-undici-fetch@npm:0.4.14, cross-undici-fetch@npm:^0.4.11, cross-undici-fetch@npm:^0.4.14":
   version: 0.4.14
   resolution: "cross-undici-fetch@npm:0.4.14"
   dependencies:

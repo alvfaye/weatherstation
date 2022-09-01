@@ -7,3 +7,5 @@ export const getWeather = ({ zip }) => {
     icon: 'https://placekitten.com/100/100',
   }
 }
+
+
