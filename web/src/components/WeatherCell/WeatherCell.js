@@ -15,7 +15,16 @@ export const Loading = () => <div>Loading...</div>
 export const Empty = () => <div>Empty</div>
 
 export const Failure = ({ error }) => (
-  <div style={{ color: 'red' }}>Error: {error.message}</div>
+  <span
+    style={{
+      backgroundColor: '#ffdfdf',
+      color: '#990000',
+      padding: '0.5rem',
+      display: 'inline-block',
+    }}
+  >
+    {error.message}
+  </span>
 )
 
 export const Success = ({ weather }) => {
