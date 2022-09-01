@@ -1,7 +1,11 @@
 export const QUERY = gql`
-  query FindWeatherQuery($id: Int!) {
-    weather: weather(id: $id) {
-      id
+  query GetWeatherQuery($zip: String!) {
+    weather: getWeather(zip: $zip) {
+      zip
+      city
+      conditions
+      temp
+      icon
     }
   }
 `
