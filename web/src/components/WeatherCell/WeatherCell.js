@@ -19,5 +19,15 @@ export const Failure = ({ error }) => (
 )
 
 export const Success = ({ weather }) => {
-  return <div>{JSON.stringify(weather)}</div>
+  return (
+    <section>
+      <h1>{weather.city}</h1>
+      <h2>
+        <img src={weather.icon} style={{ maxWidth: '2rem' }} />
+        <span>
+          {weather.temp}°F and {weather.conditions}
+        </span>
+      </h2>
+    </section>
+  )
 }
